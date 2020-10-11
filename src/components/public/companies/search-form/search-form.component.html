@@ -1,0 +1,39 @@
+<div class="row">
+    <form nz-form [formGroup]="searchForm" class="serch-form" (ngSubmit)="search()" style="width: 100%;">
+        <div class="row w-100" style="align-items: center;">
+            <div class="col-md-10">
+                <div class="input-group-lg">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="بالرجاء كتابة اسم الشركة">
+                            <mat-form-field>
+                                <mat-label>اسم الشركة</mat-label>
+                                <input matInput type="text" formControlName="name">
+                            </mat-form-field>
+                        </nz-form-control>                                
+                    </nz-form-item>
+                </div>
+            </div>
+                            
+            <div class="col-md-2 text-center">
+                <div class="input-group-lg">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button
+                                class="form-control"
+                                [disabled]="!searchForm.valid"
+                                nz-button 
+                                matRipple>
+                                <div class="loader text-center w-100" *ngIf="loader">
+                                    <nz-spin nzSimple></nz-spin>
+                                </div>                                        
+                                <span *ngIf="!loader">
+                                    بحث
+                                </span>
+                            </button>
+                        </nz-form-control>
+                    </nz-form-item>                    
+                </div>
+            </div>                                                                                                                                                            
+        </div>       
+    </form> 
+</div>

@@ -1,0 +1,10 @@
+<div class="slider">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let slide of slides">
+            <div 
+                class="slider-item bg-img"
+                [style.background]="'url('+slide.photo+')'"
+                ></div>            
+        </ng-template>                               
+    </owl-carousel-o>      
+</div>  

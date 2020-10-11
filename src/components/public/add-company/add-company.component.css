@@ -1,0 +1,24 @@
+h3{padding-top: 75px;}
+
+agm-map{
+    height: 400px;
+    width: 100%;
+    margin: auto;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.upload-icon{
+    margin-left: 8px;
+    position: relative;
+    top: -3px;
+}
+
+input[type="file"]{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}

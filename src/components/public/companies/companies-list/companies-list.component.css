@@ -1,0 +1,29 @@
+.company-box{
+    display: flex;
+    background-color: #f8f9fa!important;
+    border-radius: 5px;
+    margin-bottom: 20px;   
+    padding: 20px;
+    transition: all .3s ease-out;
+}
+
+.company-box:hover{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+}
+
+.company-box ul li:first-of-type{
+    color: #617b47;
+}
+
+.company-box ul li{
+    color: #642369;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+a{
+    background-color: #642369;
+    color: #fff;
+}
+
+a:hover{color: #fff;}

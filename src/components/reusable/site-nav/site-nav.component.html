@@ -1,0 +1,72 @@
+<nav id="nav_bar" class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" routerLink="" matRipple>
+            <img src="./../../../assets/images/logo.png" width="74px" height="auto"> 
+        </a>
+        <button 
+            class="navbar-toggler" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>         
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto text-right">                                                         
+                <li class="nav-item">
+                    <a 
+                        matRipple 
+                        class="nav-link" 
+                        routerLinkActive="active" 
+                        routerLink="" 
+                        [routerLinkActiveOptions] = '{ exact: true }'>
+                        الرئيسية
+                    </a>
+                </li> 
+                <li class="nav-item">
+                    <a 
+                        matRipple 
+                        class="nav-link" 
+                        routerLinkActive="active" 
+                        routerLink="/companies"
+                        [routerLinkActiveOptions] = '{ exact: true }'>
+                        شركات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a 
+                        matRipple 
+                        class="nav-link" 
+                        routerLinkActive="active" 
+                        routerLink="/about"
+                        [routerLinkActiveOptions] = '{ exact: true }'>
+                        من نحن
+                    </a>
+                </li> 
+                <li class="nav-item" *ngIf="!checkLogin()">
+                    <a 
+                        matRipple 
+                        class="nav-link" 
+                        routerLinkActive="active" 
+                        routerLink="/login"
+                        [routerLinkActiveOptions] = '{ exact: true }'>
+                        تسجيل الدخول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a 
+                        matRipple 
+                        class="nav-link cta-link" 
+                        routerLinkActive="active" 
+                        routerLink="/register"
+                        [routerLinkActiveOptions] = '{ exact: true }'>
+                        انضم كشركة
+                    </a>
+                </li>                                                                                
+            </ul>
+          </div>        
+    </div>
+</nav>

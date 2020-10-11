@@ -1,0 +1,68 @@
+.main-footer{
+    padding: 20px;
+    background: #7400d6;
+    direction: rtl;
+}
+
+.main-footer .contact-us h5,
+.main-footer .follow h5{
+    position: relative;
+    margin: 30px 0;
+    color: #fff;
+    font-size: 16px;
+    text-align: right;
+}
+
+.main-footer .contact-us h5:before,
+.main-footer .follow h5:before{
+    position: absolute;
+    content: "";
+    top: -10px;
+    width: 40px;
+    height: 2px;
+    background: #fff;
+}
+
+.main-footer .contact-us ul li{
+    line-height: 1.7;
+    font-size: 12px;
+    color: #fff;
+}
+
+.main-footer .contact-us ul li i{
+    padding: 10px;
+    font-size: 15px;
+    padding-right: 0;
+}
+
+.main-footer .follow ul li{
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 30px;
+    line-height: 0;
+}
+
+.main-footer .follow ul li a{
+    color: #fff;
+}
+
+.main-footer .contact-us ul,
+.main-footer .follow ul{padding: 0;}
+
+.copy-footer{
+    background: #01428e;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 300px) and (max-width: 767px) { }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) { }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1024px) { }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

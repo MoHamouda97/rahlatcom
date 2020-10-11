@@ -1,0 +1,19 @@
+.download{
+    background-color: #f8f9fa!important;
+    margin-top: 50px;
+}
+
+.download .container h3{padding-top: 75px;}
+
+.download .container .row{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .download .container .row .apple-app{
+        height: 120px;
+        margin-top: 20px;
+    }   
+}

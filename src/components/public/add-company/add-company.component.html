@@ -1,0 +1,240 @@
+<section class="add-company">
+    <div class="container" style="direction: rtl;">
+        <h3 class="special-heading text-center">            
+            اضافة شركة                
+        </h3> 
+        
+        <form nz-form [formGroup]="addForm" class="add-form" (ngSubmit)="add()" style="width: 100%;">
+            <div class="row w-100" style="align-items: center;">
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء كتابة اسم الشركة">
+                                <mat-form-field>
+                                    <mat-label>اسم الشركة</mat-label>
+                                    <input matInput type="text" formControlName="name">
+                                </mat-form-field>
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء كتابة رقم الشركة">
+                                <mat-form-field>
+                                    <mat-label>الرقم</mat-label>
+                                    <input 
+                                        matInput
+                                        #inputElement 
+                                        type="text" 
+                                        formControlName="number"
+                                        nzOverlayClassName="numeric-input"
+                                        [ngModel]="value"
+                                        (ngModelChange)="onChange($event)"
+                                        (blur)="onBlur()">
+                                </mat-form-field>
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div> 
+                
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء كتابة الموقع الالكتروني">
+                                <mat-form-field>
+                                    <mat-label>الموقع الالكتروني</mat-label>
+                                    <input matInput type="text" formControlName="website">
+                                </mat-form-field>
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div> 
+                
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء كتابة البريد الالكتروني">
+                                <mat-form-field>
+                                    <mat-label>البريد الالكتروني</mat-label>
+                                    <input 
+                                        matInput 
+                                        type="text" 
+                                        formControlName="email"
+                                        [(ngModel)]="inputValue"
+                                        (input)="onInput($event)"
+                                        [nzAutocomplete]="auto">
+                                        <nz-autocomplete #auto>
+                                            <nz-auto-option *ngFor="let option of options" [nzValue]="option">{{ option }}</nz-auto-option>
+                                        </nz-autocomplete>                                           
+                                </mat-form-field>
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء اختيار المدينة">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>المدينة</mat-label>
+                                    <mat-select [(ngModel)]="selectedValue" name="city">
+                                      <mat-option *ngFor="let city of cities" [value]="city.name">
+                                        {{city.name}}
+                                      </mat-option>
+                                    </mat-select>
+                                </mat-form-field>                                 
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء كتابة العنوان">
+                                <mat-form-field>
+                                    <mat-label>العنوان</mat-label>
+                                    <input 
+                                        matInput 
+                                        type="text" 
+                                        formControlName="address"
+                                        (keyup)="changeAddress($event)">
+                                </mat-form-field>
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div>
+                
+                <div class="col-md-12">
+                    <agm-map  [latitude]="lat" [longitude]="lng" [zoom]="zoom" #map3>
+                        <agm-marker  (dragEnd)="markerDragEnd($event)"
+                        [markerDraggable]="true" [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>                    
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء كتابة اسم المستخدم">
+                                <mat-form-field>
+                                    <mat-label>اسم المستخدم</mat-label>
+                                    <input matInput type="text" formControlName="username">
+                                </mat-form-field>
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div> 
+                
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء كتابة كلمة المرور">
+                                <mat-form-field>
+                                    <mat-label>كلمة المرور</mat-label>
+                                    <input matInput type="password" formControlName="pwp" (ngModelChange)="updateConfirmValidator()">
+                                </mat-form-field>
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div> 
+                
+                <div class="col-md-4">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء تاكيد كلمة المرور">
+                                <mat-form-field>
+                                    <mat-label>تاكيد كلمة المرور</mat-label>
+                                    <input 
+                                        matInput 
+                                        type="password" 
+                                        formControlName="checkPassword"
+                                        id="checkPassword">
+                                    <ng-template #errorTpl let-control>
+                                        <ng-container *ngIf="control.hasError('confirm')">
+                                          بالرجاء التاكد من تطابق كلمة المرور
+                                        </ng-container>
+                                      </ng-template>                                    
+                                </mat-form-field>
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء اختيار صورة">
+                                <label for="logo" class="btn btn-outline-secondary d-block">
+                                    <i nz-icon nzType="upload" class="upload-icon"></i>
+                                    {{logoName}}
+                                </label>
+                                <input 
+                                    type="file" 
+                                    class="form-control-file" 
+                                    id="logo"
+                                    name="logo"
+                                    ngModel
+                                    required
+                                    logo
+                                    #logo="ngModel"
+                                    (change)="getLogoName($event.target.files)"
+                                    [ngModelOptions]="{updateOn: 'blur'}">                                
+                            </nz-form-control>                                
+                        </nz-form-item>
+                    </div>
+                </div> 
+                
+                <div class="col-md-6">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control nzErrorTip="بالرجاء اختيار صورة الخلفية">
+                                <label for="cover" class="btn btn-outline-secondary d-block">
+                                    <i nz-icon nzType="upload" class="upload-icon"></i>
+                                    {{coverName}}
+                                </label>
+                                <input 
+                                    type="file" 
+                                    class="form-control-file" 
+                                    id="cover"
+                                    name="cover"
+                                    ngModel
+                                    required
+                                    cover
+                                    #cover="ngModel"
+                                    (change)="getCoverName($event.target.files)"
+                                    [ngModelOptions]="{updateOn: 'blur'}">                                
+                            </nz-form-control>                               
+                        </nz-form-item>
+                    </div>
+                </div>                 
+                                
+                <div class="col-md-2 text-center">
+                    <div class="input-group-lg">
+                        <nz-form-item>
+                            <nz-form-control>
+                                <button
+                                    class="form-control btn btn-primary"
+                                    [disabled]="!addForm.valid"
+                                    nz-button 
+                                    matRipple>
+                                    <div class="loader text-center w-100" *ngIf="loader">
+                                        <nz-spin nzSimple></nz-spin>
+                                    </div>                                        
+                                    <span *ngIf="!loader">
+                                        اضف شركتك الان
+                                    </span>
+                                </button>
+                            </nz-form-control>
+                        </nz-form-item>                    
+                    </div>
+                </div>                                                                                                                                                            
+            </div>       
+        </form>         
+    </div>
+
+    <app-loader [loader]="isLoading"></app-loader>
+</section>

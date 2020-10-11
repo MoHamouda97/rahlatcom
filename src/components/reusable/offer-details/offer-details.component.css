@@ -1,0 +1,45 @@
+.offer-images,
+.offer-description{
+    background-color: #f8f9fa!important;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+    margin-top: 75px;
+}
+
+.slider-item{
+    height: 400px;
+    width: 400px;     
+    background-repeat: no-repeat!important;
+    background-size: 100% 100%!important;
+    background-position: 100% 100%!important;
+    margin: auto;
+}
+
+.offer-images .brief{
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.offer-images .brief .name,
+.offer-images .brief .price{
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.offer-images .brief .discount{color: #f44336;}
+
+.offer-description{
+    text-align: right;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    padding: 10px;
+    opacity: 0;
+    height: 250px;
+}
+
+.add-opacity{
+    opacity: 1;
+    height: auto;
+}

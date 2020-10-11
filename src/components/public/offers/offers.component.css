@@ -1,0 +1,13 @@
+.no-data{
+    background-color: #f8f9fa!important;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+    color: #f44336;
+    text-align: center;
+    margin-bottom: 70px;
+    height: 100px;
+    line-height: 100px;
+    opacity: 0;
+}
+
+.add-opacity{opacity: 1;}

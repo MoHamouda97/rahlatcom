@@ -1,0 +1,10 @@
+.serch-form{
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f9fa!important;
+    display: flex;
+    height: 100px;
+    border-radius: 5px;
+    margin-top: 75px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+}

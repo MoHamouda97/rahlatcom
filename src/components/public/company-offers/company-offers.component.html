@@ -1,0 +1,14 @@
+<section class="section">
+    <app-slider [slides]="slides"></app-slider>
+    <app-offer-card [offers]="offers"></app-offer-card>
+
+    <div class="container" *ngIf="length == 0">
+        <div class="no-data" [class.add-opacity]= 'isData'>
+            <p>
+                لا توجد عروض في الوقت الحالي
+            </p>
+        </div>        
+    </div>
+
+    <app-loader [loader]="isLoading"></app-loader>
+</section>

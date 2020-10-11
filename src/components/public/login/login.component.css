@@ -1,0 +1,27 @@
+.login{
+    height: 100vh;
+    direction: rtl;
+    background-size: cover !important;
+}
+
+.login .login-form{height: 100%;}
+
+.login .login-form .form-wrapper{
+    width: 45%;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 6px;
+}
+
+.login .login-form .form-wrapper .logo{
+    width: 50%;
+    margin: auto;
+}
+
+.login .login-form form{margin-top: 20px;}
+
+
+@media (min-width: 300px) and (max-width: 767px) { 
+    .login .login-form .form-wrapper{width: 90%}
+}

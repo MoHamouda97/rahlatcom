@@ -1,0 +1,126 @@
+<div 
+    class="login bg-img" 
+    style="background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./../../../assets/images/travel.jpg);">
+    <div class="login-form d-flex align-center">
+        <div class="form-wrapper">
+            <div class="logo text-center" matRipple>
+                <a routerLink="">
+                    <img src="./../../../assets/images/logo.png" alt="logo" width="100px" />
+                </a>            
+            </div>
+
+            <form
+                nz-form
+                [formGroup]="loginForm"
+                (ngSubmit)="login()">
+                <div class="input-group-lg">
+                    <nz-form-item class="login-form">
+                        <nz-form-control nzErrorTip="بالرجاء كتابة اسم المستخدم">
+                            <nz-input-group nzPrefixIcon="user" class="input-icon">
+                                <input  
+                                    class="form-control" 
+                                    nz-input 
+                                    formControlName="username" 
+                                    placeholder="اسم المستخدم" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div class="input-group-lg">
+                    <nz-form-item class="login-form">
+                        <nz-form-control nzErrorTip="بالرجاء كتابة كلمة المرور">
+                            <nz-input-group nzPrefixIcon="lock" class="input-icon">
+                                <input  
+                                    class="form-control" 
+                                    nz-input 
+                                    type="password"
+                                    formControlName="pwp" 
+                                    placeholder="كلمة المرور" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div class="input-group-lg">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button
+                                [disabled]="!loginForm.valid"
+                                class="form-control btn btn-primary" 
+                                nz-button 
+                                matRipple>
+                                <div class="loader text-center w-100" *ngIf="loader">
+                                    <nz-spin nzSimple></nz-spin>
+                                </div>                        
+                                <span *ngIf="!loader">
+                                    تسجيل الدخول
+                                </span>    
+                            </button>
+                        </nz-form-control>
+                    </nz-form-item>                    
+                </div>
+                <div class="row">
+                    <div class="col-6 text-right">
+                        <span style="color: #ced4da">
+                            هل فقدت معلومات الدخول؟
+                        </span>
+                    </div>
+                    <div class="col-6 text-left">
+                        <a (click)="showModal()" style="color: #007bff">
+                            استرجاع معلومات الدخول
+                        </a>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>
+
+<nz-modal [(nzVisible)]="isVisible" [nzTitle]="title" (nzOnCancel)="handleCancel()">
+    <form
+        nz-form
+        [formGroup]="restoreForm"
+        (ngSubmit)="restore()"
+        style="direction: rtl;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group-lg">
+                    <nz-form-item class="login-form">
+                        <nz-form-control nzErrorTip="بالرجاء كتابة البريد الالكتروني">
+                            <nz-input-group nzPrefixIcon="mail" class="input-icon">
+                                <input  
+                                    class="form-control" 
+                                    nz-input 
+                                    formControlName="restore" 
+                                    placeholder="البريد الالكتروني" />
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </div>                              
+        </div>
+        <div class="input-group-lg">
+            <nz-form-item>
+                <nz-form-control>
+                    <button
+                        [disabled]="!restoreForm.valid"
+                        class="form-control btn btn-primary" 
+                        nz-button 
+                        matRipple>
+                        <div class="loader text-center w-100" *ngIf="restoreLoader">
+                            <nz-spin nzSimple></nz-spin>
+                        </div>                        
+                        <span *ngIf="!restoreLoader">
+                           استرجاع معلومات الحساب
+                        </span>    
+                    </button>
+                </nz-form-control>
+            </nz-form-item>                    
+        </div>
+    </form>    
+</nz-modal>
+
+<ng-template #title>
+    استرجاع معلومات الدخول  
+</ng-template>

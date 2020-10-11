@@ -1,0 +1,41 @@
+<section class="details">
+    <div class="container" *ngIf="isData">
+        <div class="offer-images">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let image of images">
+                    <div 
+                        class="slider-item bg-img"
+                        [style.background]="'url('+image.photo+')'"
+                        ></div>            
+                </ng-template>                               
+            </owl-carousel-o> 
+            
+            <div class="container brief" style="direction: rtl;" *ngIf="isData">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="name">
+                            {{details.name}}
+                        </span>
+                        <span class="view">
+                            عدد المشاهدات: {{details.views.length}}
+                        </span>
+                    </div>
+                    <div class="col-md-6" style="border-right: 1px solid #ddd;">
+                        <span class="price">
+                            {{details.price}}
+                        </span>
+                        <span class="discount">
+                            خصم {{details.discount}}% 
+                        </span>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="offer-description" [class.add-opacity]="isData" id="js_description"></div>        
+    </div>
+
+    <app-loader [loader]="isLoading"></app-loader>
+</section>

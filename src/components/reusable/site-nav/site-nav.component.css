@@ -1,0 +1,8 @@
+.cta-link{
+    border: 1px solid #ae29fe;
+    margin-left: 10px;
+}
+
+.navbar-nav .nav-item a{transition: all .3s ease-out;}
+
+.navbar-nav .nav-item a:hover{color: #23527c;}

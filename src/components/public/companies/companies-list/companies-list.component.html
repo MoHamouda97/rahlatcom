@@ -1,0 +1,28 @@
+<div *ngFor="let company of companies" class="company-box">
+    <div class="row" style="align-items: center;">
+        <div class="col-md-2">
+            <img src="{{company.logo}}" class="img-fluid" />
+        </div>
+        <div class="col-md-10">
+            <ul class="list-unstyled text-right">
+                <li>
+                    الرقم: {{company.phone}}
+                </li>
+                <li>
+                    العنوان : {{company.address}}
+                </li>
+                <li>
+                    الإيميل : {{company.email}}
+                </li>
+                <li>
+                    الموقع الإلكتروني : {{company.website}}
+                </li>                                  
+            </ul>
+        </div>
+        <div class="col-md-12">
+            <a routerLink="/company-offers/{{company.id}}" class="btn" matRipple>
+                عروض
+            </a>
+        </div>
+    </div>
+</div>

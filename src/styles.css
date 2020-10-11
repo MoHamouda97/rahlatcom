@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+/* Global */
+
+body{
+    font-family: 'Cairo', sans-serif !important;
+}
+
+section{position: relative;}
+
+/* Classes */
+
+.special-link{
+    width: fit-content;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.special-heading{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.align-center{align-items: center;}
+
+.special-heading::before{
+    position: absolute;
+    content: "";
+    top: 65px;
+    width: 100px;
+    height: 2px;
+    background: #2066b8;
+}
+
+/* Owl */
+
+.owl-theme .owl-nav [class*=owl-]{
+    background: rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, 50%);
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover{background: rgba(0, 0, 0, 1);}
+
+.owl-next{right: 60px;}
+
+.owl-prev{left: 30px;}
+
+@media only screen and (max-width: 600px) {
+    .owl-prev{left: 0;}    
+}
+
+/* Bootstrap */
+
+.navbar-expand-lg .navbar-nav .nav-link{border-radius: 5px;}
+
+/* matirial */
+
+.mat-form-field{
+    font-family: cairo, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    width: 100%;
+}
+
+.mat-form-field{text-align: right !important;}
+
+.mat-select-panel .mat-optgroup-label, 
+.mat-select-panel .mat-option{
+    font-family: cairo;
+    text-align: right;
+}
+
+/* Ant D */
+
+.ant-form-item-has-error .ant-form-item-explain, 
+.ant-form-item-has-error .ant-form-item-split{text-align: right;}
+
+.ant-btn,
+.ant-form-item .ant-upload{width: 100%;}
+
+.ant-btn > .anticon + span, .ant-btn > span + .anticon{margin-right: 8px; margin-left: 0;}
+
+.ant-upload-list-item-error, 
+.ant-upload-list-item-error .ant-upload-text-icon > .anticon, 
+.ant-upload-list-item-error .ant-upload-list-item-name{color: #1890ff;}
+
+.ant-upload-text-icon{
+    position: absolute;
+    left: 20px;    
+}
+
+.ant-message-notice-content{direction: rtl;}
+
+.ant-message .anticon{
+    margin-left: 8px;
+    margin-right: 0;
+    position: relative;
+    top: -2px;
+}
+
+.ant-input-prefix{
+    margin-right: 0;
+    margin-left: 4px;
+    position: relative;
+    top: 5px;
+}
+
+.ant-modal-footer{display: none;}
+
+.ant-modal-title{
+    text-align: right;
+    position: relative;
+    top: 2px;
+}
+
+.ant-modal-close{
+    left: 0;
+    right: auto;
+}

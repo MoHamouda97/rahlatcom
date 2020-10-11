@@ -1,0 +1,11 @@
+<section class="companies">
+    <div class="container" style="direction: rtl;">
+        <app-search-form></app-search-form>
+    </div>
+
+    <div class="container" style="direction: rtl; margin-top: 50px; padding: 0;">
+        <app-companies-list [companies]="companies"></app-companies-list>
+    </div>
+
+    <app-loader [loader]="isLoading"></app-loader>
+</section>
